@@ -3,6 +3,8 @@ package com.example.database_with_docker_demo.controller;
 import com.example.database_with_docker_demo.entity.Student;
 import com.example.database_with_docker_demo.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,7 +16,7 @@ public class StudentController {
     @Autowired
     public StudentRepository studentRepository;
 
-    @RequestMapping("/add-student")
+    @PostMapping("/add-student")
     public String addStudent(){
         Student s = new Student();
         s.setName("Anna White");
@@ -23,7 +25,7 @@ public class StudentController {
         return "Student added!";
     }
 
-    @RequestMapping("/get-students")
+    @GetMapping("/get-students")
     public List<Student> getStudents(){
         return studentRepository.findAll();
 //        return List.of(
