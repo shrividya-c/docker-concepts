@@ -1,4 +1,4 @@
-INSERT INTO Student (name, age) VALUES
+INSERT INTO student (name, age) VALUES
 ('Alice Johnson', 20),
 ('Bob Smith', 22),
 ('Charlie Davis', 19),
